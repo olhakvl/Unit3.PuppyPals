@@ -5,16 +5,33 @@ import { useState } from 'react'
 function App() {
 
   const [puppies, setPuppies] = useState(puppyList);
+  const [featPupId, setFeatPupId] = useState(null);
 
-  console.log("Puppies list: ", puppyList);
-  console.log(puppies);
+  // console.log("Puppies list: ", puppyList);
+  // console.log(puppies);
+
+  const featuredPup = puppies.find((pup) => pup.id === featPupId)
+  // console.log("Featured puppy: ", featuredPup);
+
   return (
     <div className="App">
     {
       puppies.map(puppy => {
-        return <p>{puppy.name}</p>
+        return <p onClick={()=>{setFeatPupId(puppy.id)}} key={puppy.id}>{puppy.name}</p>
       })
     }
+    {/* <p>{featPupId}</p> */}
+    {/* { featuPupID && <p>{ featPupId }</p> }  */}
+
+    {featPupId && (
+        <div>
+          <h2>{featuredPup.name}</h2>
+          <ul>
+            <li>Age: {featuredPup.age}</li>
+            <li>Email: {featuredPup.email}</li>
+          </ul>
+        </div>
+      )}
 
     </div>
   )
