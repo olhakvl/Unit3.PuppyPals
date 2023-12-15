@@ -28,11 +28,13 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #B6C4B6;
 }
 
-h1 {
-  font-size: 3.2em;
+h2 {
+  font-size: 3em;
   line-height: 1.1;
+  color: #163020;
 }
 
 button {
@@ -52,6 +54,18 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+p, li {
+  color: #304D30;
+  font-size: 20px;
+}
+
+.puppyDetails{
+  border: 2px solid black;
+  padding: 10px;
+  text-align: left;
+  background-color: #EEF0E5;
 }
 
 @media (prefers-color-scheme: light) {
